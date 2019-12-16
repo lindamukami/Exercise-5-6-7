@@ -42,11 +42,11 @@ novdec <- filter(flights, month %in% c(11,12))
 ```
 
 ```{r}
-View(flights)
+filter(flights,!(arr_delay>120|dep_delay>120))
 ```
 
 ```{r}
-View(flights)
+NA > 5
 ```
 
 
