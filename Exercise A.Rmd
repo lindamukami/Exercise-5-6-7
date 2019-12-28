@@ -17,7 +17,7 @@ library(nycflights13)
 ```
 
 ```{r}
-flights
+View(flights)
 ```
 
 ```{r}
@@ -45,23 +45,31 @@ novdec <- filter(flights, month %in% c(11,12))
 filter(flights,!(arr_delay>120|dep_delay>120))
 ```
 
+**5.2.4 Exercises **
+
+
+**Had an arrival delay of two or more hours**
+
 ```{r}
-NA > 5
+filter(flights,arr_delay > 2)
+```
+**Flew to Houston (IAH or HOU)**
+
+
+```{r}
+filter(flights, dest =='IAH' || dest=='HOU')
+```
+**Were operated by United, American, or Delta**
+
+```{r}
+filter(flights, carrier == 'UA' | (carrier =='AA' || dest=='DL'))
 ```
 
+**Departed in summer (July, August, and September)**
 
-
-
-
-
-
-
-
-
-
-
-
-
+```{r}
+filter(flights, month %in% c (7|8|9))
+```
 
 
 
